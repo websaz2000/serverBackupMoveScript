@@ -1,0 +1,19 @@
+#!/bin/bash
+HOST='drsweb.me'
+USER='username'
+PASSWD='your password'
+FILE='fsBkBitso'
+FILE2='dumpfilebitso.sql.gz'
+FILE3='configBkBitso'
+echo Test
+
+ftp -n $HOST <<END_SCRIPT
+quote USER $USER
+quote PASS $PASSWD
+put $FILE
+put $FILE2
+put $FILE3
+quit
+END_SCRIPT
+echo fff
+exit 0
